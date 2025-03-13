@@ -1,3 +1,5 @@
+'use client'
+
 import DateReserve from "@/components/DateReserve";
 import { TextField } from "@mui/material";
 import { Select, MenuItem } from "@mui/material"
@@ -8,13 +10,11 @@ export default function Booking () {
             <div className="text-xl font-medium">New Venue</div>
 
             <div className="w-fit space-y-2">
-                <div className="text-md text-left text-gray-600">Name Lastname</div>
-                <TextField name="Name-Lastname" label="Name-Lastname"></TextField>
+                <TextField name="Name-Lastname" label="Name-Lastname" variant="standard"></TextField>
             </div>
 
             <div className="w-fit space-y-2">
-                <div className="text-md text-left text-gray-600">Contact Number</div>
-                <TextField name="Contact-Number" label="Contact-Number" variant="outlined"></TextField>
+                <TextField name="Contact-Number" label="Contact-Number" variant="standard"></TextField>
             </div>
 
             <div className="w-fit space-y-2">
@@ -32,9 +32,12 @@ export default function Booking () {
             </div>
             
             <button 
-                name="Book-Venue" 
+                name="Book Venue"
+                aria-label="Book Venue"
                 className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-2 shadow-sm text-white" 
-                >Submit
+                onClick={() => alert("Book Venue")}
+            >
+                Submit
             </button>
         </main>
     );
