@@ -1,9 +1,10 @@
-import styles from './card.module.css'
 import Image from 'next/image'
+import InteractiveCard from './InteractiveCard';
 
 export default function Card ({ venueName, imgSrc }:{ venueName:string, imgSrc:string}) {
+
     return (
-        <div className="w-1/5 h-[300px] rounded-lg shadow-lg">
+        <InteractiveCard contentName={venueName}>
             <div className="w-full h-[70%] relative rounded-t-lg">
                 <Image src={imgSrc}
                     alt='Product Picture'
@@ -12,6 +13,6 @@ export default function Card ({ venueName, imgSrc }:{ venueName:string, imgSrc:s
                     objectFit='cover' />
             </div>
             <div className="w-full h-[30%] p-[10px]">{venueName}</div>
-        </div>
-    );
+        </InteractiveCard>
+    )
 }
